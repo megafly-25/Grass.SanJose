@@ -1,0 +1,48 @@
+@if (visible()) {
+  <div class="modal-backdrop" (click)="onBackdropClick($event)">
+    <div class="modal-card modal-type-{{ type() }}" (click)="$event.stopPropagation()">
+      <!-- Header Icon -->
+      <div class="modal-icon-container">
+        <div class="modal-icon-inner">
+          @switch (type()) {
+            @case ('success') {
+              <i class="pi pi-check-circle" aria-hidden="true"></i>
+            }
+            @case ('error') {
+              <i class="pi pi-times-circle" aria-hidden="true"></i>
+            }
+            @case ('warning') {
+              <i class="pi pi-exclamation-triangle" aria-hidden="true"></i>
+            }
+            @case ('confirm') {
+              <i class="pi pi-question-circle" aria-hidden="true"></i>
+            }
+          }
+        </div>
+      </div>
+
+      <!-- Title -->
+      @if (title()) {
+        <h3 class="modal-title">{{ title() }}</h3>
+      }
+
+      <!-- Message -->
+      @if (message()) {
+        <p class="modal-message">{{ message() }}</p>
+      }
+
+      <!-- Buttons -->
+      <div class="modal-actions">
+        <button type="button" class="btn-confirm" (click)="handleConfirm()">
+          {{ confirmText() }}
+        </button>
+
+        @if (showCancel()) {
+          <button type="button" class="btn-cancel" (click)="handleCancel()">
+            {{ cancelText() }}
+          </button>
+        }
+      </div>
+    </div>
+  </div>
+}

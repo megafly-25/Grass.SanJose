@@ -1,0 +1,325 @@
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: modalFadeIn 0.2s ease-out forwards;
+}
+
+.modal-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2.25rem 2rem 2rem 2rem;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.15), 0 0 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  animation: modalScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-sizing: border-box;
+}
+
+/* Outer circle container for top icon */
+.modal-icon-container {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem auto;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.modal-icon-inner {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+
+  i {
+    font-size: 1.75rem;
+    line-height: 1;
+    color: #ffffff;
+  }
+}
+
+/* Modifiers for Types */
+.modal-type-success {
+  .modal-icon-container {
+    background-color: #e8f8f0;
+  }
+  .modal-icon-inner {
+    background-color: #10b981;
+    animation: iconSuccessPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  .modal-icon-inner i {
+    animation: iconCheckDraw 0.5s ease-out 0.15s both;
+  }
+}
+
+.modal-type-error {
+  .modal-icon-container {
+    background-color: #fee2e2;
+  }
+  .modal-icon-inner {
+    background-color: #ef4444;
+    animation: iconErrorShake 0.5s ease-out forwards;
+  }
+  .modal-icon-inner i {
+    animation: iconErrorRotate 0.4s ease-out 0.15s both;
+  }
+}
+
+.modal-type-warning {
+  .modal-icon-container {
+    background-color: #fef3c7;
+  }
+  .modal-icon-inner {
+    background-color: #f59e0b;
+    animation: iconWarningPulse 1.4s ease-in-out infinite;
+  }
+  .modal-icon-inner i {
+    animation: iconWarningBounce 0.6s ease-out 0.15s both;
+  }
+}
+
+.modal-type-confirm {
+  .modal-icon-container {
+    background-color: #e0f2fe;
+  }
+  .modal-icon-inner {
+    background-color: #0284c7;
+    animation: iconConfirmPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  .modal-icon-inner i {
+    animation: iconQuestionBounce 0.6s ease-out 0.15s both;
+  }
+}
+
+/* Text Content */
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.modal-message {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0 0 1.75rem 0;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+/* Actions */
+.modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.btn-confirm {
+  background-color: #d12928;
+  color: #ffffff;
+  border: 1.5px solid #d12928;
+  border-radius: 10px;
+  padding: 0.65rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  min-width: 120px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(209, 41, 40, 0.25);
+
+  &:hover {
+    background-color: #b82221;
+    border-color: #b82221;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(209, 41, 40, 0.35);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(209, 41, 40, 0.25);
+  }
+}
+
+.btn-cancel {
+  background-color: transparent;
+  color: #1e3a8a;
+  border: 1.5px solid #1e3a8a;
+  border-radius: 10px;
+  padding: 0.65rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  min-width: 100px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: rgba(30, 58, 138, 0.05);
+    border-color: #1d4ed8;
+    color: #1d4ed8;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Icon Animations */
+@keyframes iconSuccessPop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes iconCheckDraw {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes iconErrorShake {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  55% {
+    transform: translateX(-3px) scale(1.15);
+  }
+  70% {
+    transform: translateX(3px) scale(1.15);
+  }
+  85% {
+    transform: translateX(-2px) scale(1.1);
+  }
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes iconErrorRotate {
+  0% {
+    transform: rotate(-90deg) scale(0.4);
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes iconWarningPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(245, 158, 11, 0);
+  }
+}
+
+@keyframes iconWarningBounce {
+  0% {
+    transform: scale(0.4) translateY(-10px);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes iconConfirmPop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes iconQuestionBounce {
+  0% {
+    transform: scale(0.4) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.15) rotate(3deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}

@@ -1,0 +1,67 @@
+@use '../../../../styles/styles/_variables.scss' as *;
+
+:host {
+  display: block;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4.25rem;
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(getColor(gray-dark), 0.14);
+  background: linear-gradient(180deg, rgba(getColor(colorWhite), 0.98), rgba(getColor(colorWhite), 0.94));
+  box-shadow: 0 0.35rem 1rem rgba(getColor(colorBlack), 0.06);
+}
+
+.header__toggle,
+.header__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 0;
+  border-radius: 0.85rem;
+  background: transparent;
+  color: var(--color-gray-dark);
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.header__start {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  grid-column: 1;
+}
+
+.header__toggle:hover,
+.header__toggle:focus-visible,
+.header__action:hover,
+.header__action:focus-visible {
+  outline: none;
+  background: rgba(getColor(primary), 0.1);
+  color: var(--color-primary);
+}
+
+.header__toggle:active,
+.header__action:active {
+  transform: scale(0.96);
+}
+
+.header__actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  grid-column: 3;
+}

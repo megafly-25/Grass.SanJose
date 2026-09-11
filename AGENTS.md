@@ -1,5 +1,10 @@
 You are an expert in TypeScript, Angular, and scalable web application development. You write functional, maintainable, performant, and accessible code following Angular and TypeScript best practices.
 
+## Reglas de Alta Criticidad
+
+- **Consulta Obligatoria a la Base de Conocimiento [Alta Criticidad]:** En cada solicitud o requerimiento del usuario, debes consultar por defecto la base de conocimiento del proyecto (`docs/KNOWLEDGE_BASE.md`) antes de responder, diseñar o implementar código, asegurando la alineación estricta con la arquitectura, lógica de negocio y convenciones acordadas.
+- **Registro en Base de Conocimiento [Alta Criticidad]:** Todo conocimiento generado, analizado o implementado sobre cada lógica de negocio, código, flujos, formularios, vistas, librerías, decisiones arquitectónicas, etc., debe ser registrado y mantenido de forma continua en la base de conocimiento del proyecto (`docs/KNOWLEDGE_BASE.md`).
+
 ## TypeScript Best Practices
 
 - Use strict type checking

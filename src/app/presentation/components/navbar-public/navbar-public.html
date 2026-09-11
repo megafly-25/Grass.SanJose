@@ -1,0 +1,130 @@
+<header class="header-public">
+  <div class="header-public__top-bar"></div>
+
+  <nav class="navbar-public" aria-label="Navegación principal">
+    <div class="navbar-public__inner">
+      <!-- Brand & Logo -->
+      <a class="navbar-public__brand" routerLink="/" (click)="closeMenu()">
+        <img
+          src="images/logo.png"
+          alt="Grass Sintético San José"
+          class="navbar-public__logo"
+          width="50"
+          height="50"
+        />
+        <div class="navbar-public__brand-info">
+          <span class="navbar-public__brand-title">SAN JOSÉ</span>
+          <span class="navbar-public__brand-tag">GRASS SINTÉTICO</span>
+        </div>
+      </a>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button
+        class="navbar-public__toggler"
+        type="button"
+        [class.is-active]="menuOpen()"
+        aria-label="Abrir menú de navegación"
+        (click)="toggleMenu()"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Desktop Navigation Menu -->
+      <div class="navbar-public__menu" [class.is-open]="menuOpen()">
+        <ul class="navbar-public__list">
+          <li class="navbar-public__item">
+            <a
+              class="navbar-public__link"
+              routerLink="/servicios"
+              routerLinkActive="is-active"
+              (click)="closeMenu()"
+            >
+              Servicios
+            </a>
+          </li>
+          <li class="navbar-public__item">
+            <a
+              class="navbar-public__link"
+              routerLink="/galeria"
+              routerLinkActive="is-active"
+              (click)="closeMenu()"
+            >
+              Galería
+            </a>
+          </li>
+          <li class="navbar-public__item">
+            <a
+              class="navbar-public__link"
+              routerLink="/tienda"
+              routerLinkActive="is-active"
+              (click)="closeMenu()"
+            >
+              Tienda
+            </a>
+          </li>
+          <li class="navbar-public__item">
+            <a
+              class="navbar-public__link"
+              routerLink="/tarifas"
+              routerLinkActive="is-active"
+              (click)="closeMenu()"
+            >
+              Tarifas
+            </a>
+          </li>
+          <li class="navbar-public__item">
+            <a
+              class="navbar-public__link"
+              routerLink="/opiniones"
+              routerLinkActive="is-active"
+              (click)="closeMenu()"
+            >
+              Opiniones
+            </a>
+          </li>
+          <li class="navbar-public__item">
+            <a
+              class="navbar-public__link"
+              routerLink="/contacto"
+              routerLinkActive="is-active"
+              (click)="closeMenu()"
+            >
+              Contacto
+            </a>
+          </li>
+        </ul>
+
+        <!-- Mobile-only quick actions inside drawer -->
+        <div class="navbar-public__mobile-actions">
+          <div class="navbar-public__phone-mobile">
+            <i class="pi pi-phone"></i>
+            <span>Llámanos:</span>
+            <a href="tel:+51938564690"><strong>938 564 690</strong></a>
+            <span>-</span>
+            <a href="tel:+51959631433"><strong>959 631 433</strong></a>
+          </div>
+          <a routerLink="/reservas" class="navbar-public__btn-reserve navbar-public__btn-reserve--mobile" (click)="closeMenu()">
+            <i class="pi pi-calendar"></i>
+            <span>Reservar Cancha</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Desktop Contact & CTA Action -->
+      <div class="navbar-public__actions">
+        <div class="navbar-public__phone">
+          <span class="navbar-public__phone-label">Llámanos:</span>
+          <a href="tel:+51938564690" class="navbar-public__phone-number">938 564 690</a>
+          <span class="navbar-public__phone-separator">-</span>
+          <a href="tel:+51959631433" class="navbar-public__phone-number">959 631 433</a>
+        </div>
+
+        <a routerLink="/reservas" class="navbar-public__btn-reserve" (click)="closeMenu()">
+          <span>Reservar Cancha</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>

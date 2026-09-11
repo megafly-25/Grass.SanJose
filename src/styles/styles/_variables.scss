@@ -1,0 +1,89 @@
+@use 'sass:map';
+
+// =============================================================================
+// Paleta de Colores ($colors) - Identidad Grass San José
+// =============================================================================
+$colors: (
+  'primary': #22c55e,
+  'primary-hover': #16a34a,
+  'primary-dark': #15803d,
+  'primary-light': #dcfce7,
+  'primary-error': #dc3545,
+  'secondary': #0c130e,
+  'secondary-hover': #141f17,
+  'secondary-light': #1f2e23,
+  'tertiary': #10b981,
+  'accent': #4ade80,
+  'sports-lime': #84cc16,
+  'success': #22c55e,
+  'warning': #f59e0b,
+  'danger': #ef4444,
+  'info': #06b6d4,
+  'surface': #ffffff,
+  'surface-dark': #0f1712,
+  'background': #0c130e,
+  'background-light': #f4f6f9,
+  'text-main': #212529,
+  'text-muted': #94a3b8,
+  'text-inverse': #ffffff,
+  'border': #223528,
+  'border-light': #dee2e6,
+  'border-focus': #22c55e,
+  'shadow': rgba(0, 0, 0, 0.4),
+  'colorWhite': #ffffff,
+  'white': #ffffff,
+  'colorBlack': #080d09,
+  'black': #080d09,
+  'gray-dark': #141a16,
+  'gray-light': #a0aec0
+);
+
+// =============================================================================
+// Variables CSS en :root
+// =============================================================================
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  --font-family-base: system-ui,
+  -apple-system,
+  'Segoe UI',
+  Roboto,
+  Helvetica,
+  Arial,
+  sans-serif;
+  --font-size-base: 1rem;
+  --font-size-sm: 0.875rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+
+  --border-radius-sm: 4px;
+  --border-radius-base: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-pill: 9999px;
+
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+  0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+// =============================================================================
+// Helper function: getColor($key)
+// =============================================================================
+@function getColor($key) {
+  $val: map.get($colors, $key);
+  @if $val != null {
+    @return $val;
+  }
+  $str-key: #{$key};
+  $val-str: map.get($colors, $str-key);
+  @if $val-str != null {
+    @return $val-str;
+  }
+  @return #000000;
+}

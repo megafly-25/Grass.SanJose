@@ -1,0 +1,26 @@
+<header class="header" aria-label="Barra superior">
+	<div class="header__start">
+
+		<button
+			type="button"
+			class="header__toggle"
+			[attr.aria-label]="sidebarCollapsed() ? 'Mostrar sidebar' : 'Ocultar sidebar'"
+			[attr.aria-pressed]="sidebarCollapsed()"
+			(click)="toggleSidebar()"
+		>
+			<i class="pi" 
+            style="font-size: 1.5rem"
+            [class.pi-bars]="!sidebarCollapsed()" 
+            [class.pi-chevron-right]="sidebarCollapsed()" 
+            aria-hidden="true"></i>
+		</button>
+	</div>
+
+	<div class="header__actions" aria-label="Acciones rápidas">
+		<button type="button" class="header__action" aria-label="Más opciones">
+			<i class="pi pi-bell" 
+            style="font-size: 1.5rem"
+            aria-hidden="true"></i>
+		</button>
+	</div>
+</header>

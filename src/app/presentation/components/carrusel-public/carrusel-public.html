@@ -1,0 +1,76 @@
+<section
+  class="carousel"
+  aria-label="Carrusel de canchas y servicios"
+  (mouseenter)="stopAutoplay()"
+  (mouseleave)="startAutoplay()"
+>
+  @for (slide of slides; track $index) {
+    <div
+      class="carousel__slide"
+      [class.is-active]="currentIndex() === $index"
+      [style.backgroundImage]="'url(' + slide.image + ')'"
+    >
+      <div class="carousel__overlay"></div>
+
+      <div class="carousel__content">
+        <!-- Top Pill Badge -->
+        <div class="carousel__badge-wrapper">
+          <span class="carousel__badge">{{ slide.badge }}</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="carousel__title">{{ slide.title }}</h1>
+
+        <!-- Subtitle -->
+        <p class="carousel__subtitle">{{ slide.subtitle }}</p>
+
+        <!-- Persuasive Description -->
+        <p class="carousel__description">{{ slide.description }}</p>
+
+        <!-- Call to Action Buttons -->
+        <div class="carousel__actions">
+          <a [routerLink]="slide.primaryCtaLink" class="carousel__btn-primary">
+            <span>{{ slide.primaryCtaText }}</span>
+            <span class="carousel__btn-arrow">→</span>
+          </a>
+
+          <a [routerLink]="slide.secondaryCtaLink" class="carousel__btn-secondary">
+            <span>{{ slide.secondaryCtaText }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- Previous / Next Arrows -->
+  <button
+    type="button"
+    class="carousel__nav-btn carousel__nav-btn--prev"
+    (click)="prev()"
+    aria-label="Slide anterior"
+  >
+    <i class="pi pi-chevron-left" aria-hidden="true"></i>
+  </button>
+
+  <button
+    type="button"
+    class="carousel__nav-btn carousel__nav-btn--next"
+    (click)="next()"
+    aria-label="Slide siguiente"
+  >
+    <i class="pi pi-chevron-right" aria-hidden="true"></i>
+  </button>
+
+  <!-- Dots / Indicators -->
+  <div class="carousel__indicators" role="tablist" aria-label="Diapositivas">
+    @for (slide of slides; track $index) {
+      <button
+        type="button"
+        class="carousel__indicator"
+        [class.is-active]="currentIndex() === $index"
+        (click)="goTo($index)"
+        [attr.aria-label]="'Ir a diapositiva ' + ($index + 1)"
+      ></button>
+    }
+  </div>
+</section>

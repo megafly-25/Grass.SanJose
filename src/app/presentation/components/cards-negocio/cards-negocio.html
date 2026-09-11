@@ -1,0 +1,46 @@
+<section class="business-section" aria-labelledby="business-heading">
+  <div class="business-section__inner">
+    <!-- Header -->
+    <div class="business-section__header">
+      <h2 id="business-heading" class="business-section__title">
+        HAZ NEGOCIO CON NOSOTROS
+      </h2>
+      <div class="business-section__line" aria-hidden="true"></div>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="business-section__grid">
+      @for (card of cards; track card.id) {
+        <article class="business-card">
+          <!-- Background Image -->
+          <img
+            [src]="card.image"
+            [alt]="card.title"
+            class="business-card__image"
+            loading="lazy"
+          />
+
+          <!-- Gradient Overlay -->
+          <div class="business-card__overlay"></div>
+
+          <!-- Card Content -->
+          <div class="business-card__content">
+            <h3 class="business-card__title">
+              {{ card.title }}
+            </h3>
+
+            <a
+              [href]="getWhatsappUrl(card.whatsappMessage)"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="business-card__btn"
+              [attr.aria-label]="'Más información sobre ' + card.title"
+            >
+              <span>{{ card.buttonText }}</span>
+            </a>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

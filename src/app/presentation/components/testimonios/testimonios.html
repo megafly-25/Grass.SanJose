@@ -1,0 +1,71 @@
+<section class="testimonials-section" aria-labelledby="testimonials-heading">
+  <div class="testimonials-section__inner">
+    <!-- Section Header -->
+    <div class="testimonials-section__header">
+      <span class="testimonials-section__kicker">
+        <span class="testimonials-section__dash" aria-hidden="true">—</span>
+        TESTIMONIOS
+        <span class="testimonials-section__dash" aria-hidden="true">—</span>
+      </span>
+
+      <h2 id="testimonials-heading" class="testimonials-section__title">
+        Voces de la cancha
+      </h2>
+
+      <p class="testimonials-section__subtitle">
+        Descubre por qué los mejores equipos y jugadores del área nos eligen como su casa deportiva de entrenamiento semanal.
+      </p>
+
+      <div class="testimonials-section__line" aria-hidden="true"></div>
+    </div>
+
+    <!-- Testimonials Grid -->
+    <div class="testimonials-grid">
+      @for (item of testimonials; track item.id) {
+        <article class="testimonial-card">
+          <!-- Card Glow Ambient -->
+          <div class="testimonial-card__ambient-glow" aria-hidden="true"></div>
+
+          <!-- Top Row: Rating & Quote Icon -->
+          <div class="testimonial-card__top">
+            <div class="testimonial-card__stars" [attr.aria-label]="item.rating + ' de 5 estrellas'">
+              <i class="pi pi-star-fill" aria-hidden="true"></i>
+              <i class="pi pi-star-fill" aria-hidden="true"></i>
+              <i class="pi pi-star-fill" aria-hidden="true"></i>
+              <i class="pi pi-star-fill" aria-hidden="true"></i>
+              <i class="pi pi-star-fill" aria-hidden="true"></i>
+            </div>
+
+            <div class="testimonial-card__quote-icon" aria-hidden="true">
+              <i class="pi pi-comment"></i>
+            </div>
+          </div>
+
+          <!-- Quote Body -->
+          <blockquote class="testimonial-card__quote">
+            "{{ item.quote }}"
+          </blockquote>
+
+          <!-- Author Profile -->
+          <footer class="testimonial-card__author">
+            <div class="testimonial-card__avatar">
+              <span>{{ item.avatarText }}</span>
+            </div>
+
+            <div class="testimonial-card__author-info">
+              <div class="testimonial-card__name-wrapper">
+                <span class="testimonial-card__name">{{ item.name }}</span>
+                @if (item.verified) {
+                  <span class="testimonial-card__verified" title="Cliente verificado">
+                    <i class="pi pi-check" aria-hidden="true"></i>
+                  </span>
+                }
+              </div>
+              <span class="testimonial-card__role">{{ item.role }}</span>
+            </div>
+          </footer>
+        </article>
+      }
+    </div>
+  </div>
+</section>

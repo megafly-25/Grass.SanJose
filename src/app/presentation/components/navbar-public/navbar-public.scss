@@ -1,0 +1,326 @@
+.header-public {
+  width: 100%;
+  position: relative;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+
+  &__top-bar {
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #10b981 0%, #22c55e 50%, #84cc16 100%);
+  }
+}
+
+.navbar-public {
+  width: 100%;
+  background-color: #0c130e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 0.65rem 2rem;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 1.5rem;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: transform 200ms ease;
+
+    &:hover {
+      transform: translateY(-1px);
+    }
+  }
+
+  &__logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.4), 0 0 0 2px rgba(34, 197, 94, 0.6);
+    background-color: #000;
+  }
+
+  &__brand-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+
+  &__brand-title {
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__brand-tag {
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: #22c55e;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  &__toggler {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1100;
+
+    span {
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color: #fff;
+      border-radius: 2px;
+      transition: all 250ms ease;
+    }
+
+    &.is-active {
+      span:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+      span:nth-child(2) { opacity: 0; }
+      span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+    }
+  }
+
+  &__menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    padding: 0.5rem 0.25rem;
+    position: relative;
+    transition: color 200ms ease;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      transform: translateX(-50%) scaleX(0);
+      width: 100%;
+      height: 2px;
+      background: #22c55e;
+      border-radius: 2px;
+      transition: transform 200ms ease;
+    }
+
+    &:hover {
+      color: #22c55e;
+      &::after { transform: translateX(-50%) scaleX(1); }
+    }
+
+    &.is-active {
+      color: #fff;
+      font-weight: 600;
+      &::after {
+        transform: translateX(-50%) scaleX(1);
+        background: #22c55e;
+        box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+      }
+    }
+  }
+
+  &__mobile-actions {
+    display: none;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.9rem;
+
+    &-label {
+      color: rgba(255, 255, 255, 0.65);
+      font-weight: 500;
+    }
+
+    &-number {
+      color: #fff;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: color 200ms ease;
+
+      &:hover {
+        color: #22c55e;
+      }
+    }
+
+    &-separator {
+      color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  &__btn-reserve {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+    color: #fff;
+    padding: 0.65rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+    transition: all 220ms ease;
+    white-space: nowrap;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(34, 197, 94, 0.55);
+      filter: brightness(1.08);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .navbar-public {
+    padding: 0.65rem 1.25rem;
+    &__list { gap: 1.25rem; }
+    &__actions { gap: 1rem; }
+  }
+}
+
+@media (max-width: 960px) {
+  .navbar-public {
+    padding: 0.65rem 1rem;
+    &__inner { flex-wrap: wrap; }
+    &__toggler { display: flex; order: 2; }
+    &__actions { display: none; }
+    &__menu {
+      order: 3;
+      flex-basis: 100%;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 300ms ease, padding 300ms ease;
+      flex-direction: column;
+
+      &.is-open {
+        max-height: 520px;
+        padding: 1.25rem 0 1rem;
+      }
+    }
+
+    &__list {
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1rem;
+    }
+
+    &__item {
+      width: 100%;
+      text-align: center;
+    }
+
+    &__link {
+      display: block;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+
+      &:hover,
+      &.is-active {
+        background-color: rgba(34, 197, 94, 0.12);
+      }
+      &::after { display: none; }
+    }
+
+    &__mobile-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      width: 100%;
+    }
+
+    &__phone-mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      color: rgba(255, 255, 255, 0.85);
+      font-family: 'Barlow', sans-serif;
+      font-size: 0.95rem;
+
+      i { color: #22c55e; font-size: 1rem; }
+      strong { color: #fff; }
+
+      a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 200ms ease;
+
+        &:hover {
+          color: #22c55e;
+        }
+      }
+    }
+
+    &__btn-reserve--mobile {
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+}

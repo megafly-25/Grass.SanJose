@@ -1,0 +1,354 @@
+.footer {
+  width: 100%;
+  background: linear-gradient(180deg, rgba(8, 13, 9, 0.94) 0%, rgba(5, 8, 5, 0.98) 100%),
+    url('/images/carrusel-1.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 4rem 1.5rem 1.75rem;
+  border-top: 1px solid rgba(34, 197, 94, 0.25);
+  position: relative;
+  font-family: 'Barlow', sans-serif;
+
+  &__inner {
+    max-width: 1360px;
+    margin: 0 auto;
+  }
+
+  /* Center Brand */
+  &__brand-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+  }
+
+  &__brand-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: transform 200ms ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  &__brand-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 16px rgba(34, 197, 94, 0.5), 0 0 0 2px rgba(34, 197, 94, 0.6);
+    background-color: #000;
+  }
+
+  &__brand-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+  }
+
+  &__brand-title {
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  &__brand-tag {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #22c55e;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* 4 Columns */
+  &__columns {
+    display: grid;
+    grid-template-columns: 1.3fr 1.1fr 1.1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  &__col-title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    margin: 0 0 1.25rem;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    &--contact {
+      gap: 0.9rem;
+    }
+
+    &--social {
+      gap: 0.65rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.45;
+  }
+
+  &__separator {
+    color: rgba(255, 255, 255, 0.4);
+    margin: 0 0.15rem;
+  }
+
+  &__icon {
+    color: #22c55e;
+    font-size: 1rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+  }
+
+  &__link {
+    color: rgba(255, 255, 255, 0.82);
+    text-decoration: none;
+    font-size: 0.92rem;
+    transition: color 200ms ease;
+
+    &:hover {
+      color: #22c55e;
+    }
+
+    &--arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+
+      i {
+        color: #22c55e;
+        font-size: 0.85rem;
+        transition: transform 200ms ease;
+      }
+
+      &:hover i {
+        transform: translateX(3px);
+      }
+    }
+  }
+
+  &__social-link-full {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transition: color 200ms ease, transform 200ms ease;
+
+    i {
+      color: #22c55e;
+      font-size: 1.05rem;
+    }
+
+    &:hover {
+      color: #22c55e;
+      transform: translateX(3px);
+    }
+  }
+
+  &__btn-cotiza {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #22c55e 0%, #15803d 100%);
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    padding: 0.85rem 1.8rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(34, 197, 94, 0.45);
+    transition: all 220ms ease;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 220px;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(34, 197, 94, 0.65);
+      filter: brightness(1.1);
+    }
+  }
+
+  /* Divider */
+  &__divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1.5rem;
+  }
+
+  /* Bottom Bar */
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  &__copyright {
+    margin: 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  /* WhatsApp Pill in Footer */
+  &__whatsapp-pill {
+    display: inline-flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 50px;
+    padding: 4px 6px 4px 16px;
+    text-decoration: none;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    transition: transform 200ms ease, box-shadow 200ms ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+  }
+
+  &__whatsapp-text {
+    font-size: 0.85rem;
+    font-weight: 900;
+    color: #0c130e;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+  }
+
+  &__whatsapp-icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #25d366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+}
+
+/* =============================================================================
+   Floating WhatsApp Button (Bottom Right Corner)
+   ============================================================================= */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &__badge {
+    background-color: #ffffff;
+    color: #0c130e;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    padding: 0.4rem 0.85rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    white-space: nowrap;
+    opacity: 0.95;
+  }
+
+  &__icon-btn {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: #25d366;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    transition: all 200ms ease;
+  }
+
+  &:hover {
+    transform: scale(1.08) translateY(-2px);
+
+    .floating-whatsapp__icon-btn {
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.65);
+    }
+  }
+}
+
+/* =============================================================================
+   Responsive Breakpoints
+   ============================================================================= */
+@media (max-width: 1080px) {
+  .footer {
+    &__columns {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 3rem 1rem 1.5rem;
+
+    &__brand-center {
+      margin-bottom: 2.5rem;
+    }
+
+    &__columns {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .floating-whatsapp {
+    bottom: 16px;
+    right: 16px;
+
+    &__badge {
+      display: none;
+    }
+
+    &__icon-btn {
+      width: 48px;
+      height: 48px;
+      font-size: 1.5rem;
+    }
+  }
+}

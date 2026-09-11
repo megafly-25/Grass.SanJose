@@ -1,0 +1,54 @@
+<aside class="sidebar" [class.sidebar--collapsed]="collapsed()" aria-label="Navegación principal">
+	<div class="sidebar__brand">
+		@if (!collapsed()) {
+		<img ngSrc="/images/logo.png" width="200" height="50" alt="Grass San José" priority class="sidebar__logo" />
+		} @else {
+		<img ngSrc="/images/favicon.png" width="50" height="50" alt="Grass San José" priority class="sidebar__logo" />
+		}
+	</div>
+
+	<div class="sidebar__profile" aria-label="Usuario conectado">
+		<div class="sidebar__avatar" aria-hidden="true">JR</div>
+		<div class="sidebar__profile-copy">
+			<p class="sidebar__name">{{ userName }}</p>
+			<p class="sidebar__role">Administración</p>
+		</div>
+		<span class="sidebar__chevrons" aria-hidden="true">
+			<i class="pi pi-angle-up"></i>
+			<i class="pi pi-angle-down"></i>
+		</span>
+	</div>
+
+	<nav class="sidebar__nav" aria-label="Secciones del portal">
+
+		@for (group of menuGroups; track group.path) {
+		<section class="sidebar__section">
+			<a [class]="'sidebar__link sidebar__link--group' + (group.items.length === 0 ? ' sidebar__link--empty' : '')"
+				[routerLink]="group.path" routerLinkActive="is-active"
+				[attr.aria-label]="collapsed() ? group.label : null">
+				<i aria-hidden="true" [attr.class]="'pi ' + group.iconClass"></i>
+				<span class="sidebar__label">{{ group.label }}</span>
+			</a>
+
+			<ul class="sidebar__submenu" [class.sidebar__submenu--collapsed]="collapsed()"
+				[attr.aria-label]="group.label">
+				@for (item of group.items; track item.path) {
+				<li class="sidebar__submenu-item">
+					<a class="sidebar__sublink" [routerLink]="item.path" routerLinkActive="is-active"
+						[routerLinkActiveOptions]="{ exact: true }" [attr.aria-label]="collapsed() ? item.label : null">
+						<span class="sidebar__bullet" aria-hidden="true"></span>
+						<span class="sidebar__label">{{ item.label }}</span>
+					</a>
+				</li>
+				}
+			</ul>
+		</section>
+		}
+	</nav>
+
+	<div class="sidebar__footer" [attr.aria-label]="'Ambiente ' + environmentName + ', versión ' + appVersion">
+		<span class="sidebar__footer-env">{{ collapsed() ? environmentName.slice(0, 3).toUpperCase() : environmentName
+			}}</span>
+		<span class="sidebar__footer-version">v{{ appVersion }}</span>
+	</div>
+</aside>
