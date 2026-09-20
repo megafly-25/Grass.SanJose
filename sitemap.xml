@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://grass-sanjose.com/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <image:image>
+      <image:loc>https://grass-sanjose.com/images/carrusel-1.jpg</image:loc>
+      <image:title>Cancha de Fútbol y Vóley con Grass Sintético Techado en Huánuco</image:title>
+      <image:caption>Instalaciones techadas de Grass San José en Huánuco con césped sintético certificado FIFA e iluminación LED.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://grass-sanjose.com/images/Grass%20san%20jose%20vista%20superior.jpeg</image:loc>
+      <image:title>Vista Panorámica del Complejo Grass San José Huánuco</image:title>
+      <image:caption>Vista superior de la infraestructura deportiva techada en Cayhuayna, Huánuco.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://grass-sanjose.com/images/grass%20san%20jose%20jugando.jpeg</image:loc>
+      <image:title>Partido Nocturno con Iluminación LED Estadio en Grass San José</image:title>
+      <image:caption>Encuentros deportivos nocturnos en canchas de grass sintético con iluminación LED de alta potencia.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://grass-sanjose.com/images/logo.png</image:loc>
+      <image:title>Logo Oficial de Grass San José Huánuco</image:title>
+      <image:caption>Identidad visual de Grass San José en Huánuco.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://grass-sanjose.com/contacto</loc>
+    <lastmod>2026-09-19</lastmod>
+    <image:image>
+      <image:loc>https://grass-sanjose.com/images/logo.png</image:loc>
+      <image:title>Contacto y Reservas Grass San José Huánuco</image:title>
+      <image:caption>Reserva turnos de canchas sintéticas en Cayhuayna, Huánuco.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://grass-sanjose.com/galeria</loc>
+    <lastmod>2026-09-19</lastmod>
+    <image:image>
+      <image:loc>https://grass-sanjose.com/images/carrusel-1.jpg</image:loc>
+      <image:title>Galería de Canchas y Partidos de Grass San José</image:title>
+      <image:caption>Fotos y videos de partidos, torneos e instalaciones de fútbol y vóley en Huánuco.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://grass-sanjose.com/images/campeonato.jpeg</image:loc>
+      <image:title>Torneos y Campeonatos Deportivos en Grass San José</image:title>
+      <image:caption>Organización de campeonatos corporativos y ligas en Huánuco.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://grass-sanjose.com/images/cacha_piso.jpeg</image:loc>
+      <image:title>Césped Sintético Certificado de Alto Rendimiento</image:title>
+      <image:caption>Detalle de fibra y césped deportivo homologado para competencia.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://grass-sanjose.com/tarifas</loc>
+    <lastmod>2026-09-19</lastmod>
+    <image:image>
+      <image:loc>https://grass-sanjose.com/images/Grass%20san%20jose%20vista%20superior.jpeg</image:loc>
+      <image:title>Tarifas de Alquiler de Canchas en Huánuco</image:title>
+      <image:caption>Precios transparentes para fútbol y vóley techado en Huánuco.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://grass-sanjose.com/opiniones</loc>
+    <lastmod>2026-09-19</lastmod>
+    <image:image>
+      <image:loc>https://grass-sanjose.com/images/logo.png</image:loc>
+      <image:title>Opiniones y Calificaciones de Jugadores en Grass San José</image:title>
+      <image:caption>Experiencias de clientes y deportistas en Grass San José Huánuco.</image:caption>
+    </image:image>
+  </url>
+</urlset>
